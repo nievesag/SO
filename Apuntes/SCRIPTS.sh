@@ -1,5 +1,6 @@
 SCRIPTS
-Importante: Para ejecutar un script debe tener permisos de ejecución, que se pueden otorgar con el comando chmod +x <ruta_del_script> en la consola
+Importante: Para ejecutar un script debe tener permisos de ejecución, que se pueden otorgar con el comando 
+chmod +x <ruta_del_script> en la consola
 
 --- Argumentos ---
 "ARGUMENTO 1: $1"
@@ -74,3 +75,4 @@ grep @ucm agenda.txt # saca a todos los que sean estudiantes de la ucm, busca el
 grep [73]: agenda.txt # saca todos los que tengan un teléfono que contenga un 7 o un 3
 
 # borra de la agenda un nuevo contacto:
+sed '/Nombre/d' agenda.txt # elimina las líneas que contengan Nombre
