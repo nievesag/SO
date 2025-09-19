@@ -1,0 +1,1 @@
+ls -l /dev/ | grep $(stat miID.c | Device | cut -d ':' 2 | cut -d ',' -f1) // Si mezcla Tema1 con Tema2 preguntará algo así
