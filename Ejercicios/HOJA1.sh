@@ -1,3 +1,4 @@
+# ***-***-- INTERFACES DEL SISTEMA --***-***
 # *****- INTERFAZ DE LA LINEA DE COMANDOS -*****
 # ----- LA SHELL DE BASH
 # --- Linea de comandos
@@ -93,33 +94,69 @@ ps -p $$ -o "pid ppid cmd"
 
 # *Ejercicio 7:*
 # which determina qué comando se ejecutará cuando se usa en la línea de comandos
-# --
+# 
 # which bash : /usr/bin/bash
 # type bash : bash is /usr/bin/bash
-# --
+# 
 # which cd :
 # type cd : is a shell builtin
-# --
+# 
 # which echo : /usr/bin/echo
 # type echo : is a shell builtin
-# --
+# 
 # which test : /usr/bin/test
 # type test : is a shell builtin
 
-
 # --- Manejo de cadenas y flujo de caracteres
+# *Ejercicio 1:*
+# *Ejercicio 2:*
+# *Ejercicio 3:*
+# *Ejercicio 4:*
+# *Ejercicio 5:*
+# *Ejercicio 6:*
+# *Ejercicio 7:*
 
 # ----- EL SISTEMA DE FICHEROS
+# *Ejercicio 1:*
+# *Ejercicio 2:*
+# *Ejercicio 3:*
+# *Ejercicio 4:*
+# *Ejercicio 5:*
+# *Ejercicio 6:*
+# *Ejercicio 7:*
+# *Ejercicio 8:*
+
 # --- Búsqueda de ficheros
+# *Ejercicio 1:*
+# *Ejercicio 2:*
+# *Ejercicio 3:*
 
 # ----- REDIRECCIONES, TUBERÍAS Y EXPRESIONES REGULARES
+# *Ejercicio 1:*
+# *Ejercicio 2:*
+# *Ejercicio 3:*
+# *Ejercicio 4:*
+# *Ejercicio 5:*
+# *Ejercicio 6:*
+
 # ----- PROGRAMACIÓN EN LENGUAJE SHELL
-# ----- PROYECTO: AGENDA EN SHELL SCRIPT
+# *Ejercicio 1:*
+# *Ejercicio 2:*
+# *Ejercicio 3:*
+# *Ejercicio 4:*
+# *PROYECTO: AGENDA EN SHELL SCRIPT:*
 
 # *****- API DEL SISTEMA OPERATIVO -*****
-
 # ----- COMPILACIÓN Y DEPURACIÓN DE LOS PROGRAMAS
+# *Ejercicio 1:*
 
 # ----- GESTIÓN DE ERRORES
+# *Ejercicio 2:*
+# *Ejercicio 3:*
 
 # ----- LIBRERÍAS Y LLAMADAS AL SISTEMA
+# *Ejercicio 1:*
+# *Ejercicio 2:*
+# *Ejercicio 3:*
+# *Ejercicio 4:*
+# *Ejercicio 5:*
