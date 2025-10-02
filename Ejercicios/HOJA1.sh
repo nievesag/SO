@@ -223,23 +223,108 @@ ps -p $$ -o "pid ppid cmd"
 > grep 'al\{1,2}\o' texto1
 
 # ----- PROGRAMACIÓN EN LENGUAJE SHELL
+# [Importante] Para ejecutar un script debe tener permisos de ejecución, que se pueden otorgar con:
+> chmod +x <ruta_del_script>
+
 # *Ejercicio 1:*
+---
+#!/bin/bash
+
+# --- Variables ---
+NAME=$0 # esto saca la ruta
+FIRST=$1 # estos hay que pasárselos de entrada al llamarlo
+SECOND=$2
+
+echo -e "$NAME \n $FIRST \n $SECOND"
+--- 
+> chmod +x ./Documents/script1.sh
+> ./Documents/script1.sh 1 2
+# saca: ./Documents/script1.sh 1 2
+
 # *Ejercicio 2:*
-# *Ejercicio 3:*
+---
+#!/bin/bash
+
+# --- Variables ---
+ARG=$1
+
+if [ "$#" -ne 1 ]; then
+    echo "Solo un argumento por favor" >&2
+    exit 1
+fi
+
+test -e $1
+EXIST=$? # return 0 -> file exists ; returns 1 -> file does not exist
+echo "existe: $EXIST"
+
+test -f $1
+REGULAR=$? # returns 0 -> is regular file ; returns 1 -> is not regular file
+echo "regular: $((REGULAR))"
+
+if test "$REGULAR" -eq 0; then
+echo "soy regular"; 
+number_of_lines=`wc --lines < $1`
+number_of_words=`wc --word < $1`
+
+echo "lineas: $number_of_lines"
+echo "palabras: $number_of_words"
+fi
+---
+
+# *Ejercicio 3:* ???????????????????
+
+#!/bin/bash
+
+# --- Variables ---
+ARG=$1
+
+for FILE in $1; do
+
+    cat $FILE
+    test -f $1
+    REGULAR=$? # returns 0 -> is regular file ; returns 1 -> is not regular file
+
+    if test "$REGULAR" -eq 0; then
+        echo "soy regular"; 
+        number_of_lines=`wc --lines < $1`
+        number_of_words=`wc --word < $1`
+
+        echo "$0  $number_of_lines $number_of_words"
+    fi
+done
+---
+
+
 # *Ejercicio 4:*
+# El valor de A es “Hola mundo!”
+
 # *PROYECTO: AGENDA EN SHELL SCRIPT:*
+
 
 # *****- API DEL SISTEMA OPERATIVO -*****
 # ----- COMPILACIÓN Y DEPURACIÓN DE LOS PROGRAMAS
 # *Ejercicio 1:*
 
+
 # ----- GESTIÓN DE ERRORES
 # *Ejercicio 2:*
+
+
 # *Ejercicio 3:*
+
 
 # ----- LIBRERÍAS Y LLAMADAS AL SISTEMA
 # *Ejercicio 1:*
+
+
 # *Ejercicio 2:*
+
+
 # *Ejercicio 3:*
+
+
 # *Ejercicio 4:*
+
+
 # *Ejercicio 5:*
+
