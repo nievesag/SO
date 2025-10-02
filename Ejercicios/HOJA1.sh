@@ -109,35 +109,118 @@ ps -p $$ -o "pid ppid cmd"
 
 # --- Manejo de cadenas y flujo de caracteres
 # *Ejercicio 1:*
+> echo -e "zorro\npájaro\nvaca\ncaballo\nabeja" | sort
+
 # *Ejercicio 2:*
+> echo -e "zorro\npájaro\nvaca\ncaballo\nabeja" > texto1
+> sort texto1
+
 # *Ejercicio 3:*
+> cat text1
+> echo -e "pera\nmanzana\nplátano\nciruela" > texto1
+
+> cat > texto2 # ahora escribes por entrada estándar pera manzana etc (con ctrl + d dejas de escribir en la entrada estándar (TECLADO))
+> cat texto2 # saca pera manzana etc
+
 # *Ejercicio 4:*
+> cat texto1 texto2 > texto3
+
 # *Ejercicio 5:*
+> wc texto1 # etc
+
+> ls -l texto1 # lo unico igual con wc es el numero de caracteres
+
 # *Ejercicio 6:*
+> sudo dmesg | head -n 10 # saca las 10 primeras lineas de mensajes del sistema
+> sudo dmesg | tail -n 10 # las 10 últimas
+
+> sudo dmesg | tail -f # las últimas líneas del fichero
+
 # *Ejercicio 7:*
+> cat texto1 | tr '\n' '\t' # saca sustituyendo los saltos por tab
+> cat texto1 | tr '\n' '\t' > texto1 # esto para modificar el archivo original
 
 # ----- EL SISTEMA DE FICHEROS
 # *Ejercicio 1:*
+> cd # sin argumentos cambia al directorio del usuario
+> pwd # saca el directorio en el que te encuentras
+> cd /usr/bin # vas a /usr/bin, si haces pwd saca /usr/bin
+> cd - # volver al directorio anterior
+> cd ../../usr/bin # de forma relativa...
+> cd
+
 # *Ejercicio 2:*
+> mkdrir mis_archivos # crea directorio
+> ls # saca la lista de directorios
+
 # *Ejercicio 3:*
+> mkdir -p mis_archivos/prueba/texto/tmp
+# sin -p busca el directorio para crear tmp al final de la ruta... falla...
+
 # *Ejercicio 4:*
+> rmdir # borra el directorio solo si esta vacio
+# para borrar prueba hay que ir eliminando todos los directorios de dentro poco a poco hasta que este vacio
+
 # *Ejercicio 5:*
+> cp texto1 copia1
+> mv copia1 fichero1
+
 # *Ejercicio 6:*
+> mkdir copia && cp texto1 texto2 fichero1 copia/
+
 # *Ejercicio 7:*
+> cp -r copia otra_copia
+
 # *Ejercicio 8:*
+> rm texto1 && texto2 && fichero1 # rm borra ficheros
+> rm -r copia # va borrando todos los archivos del directorio una vez esté vacio se borra a si mismo
 
 # --- Búsqueda de ficheros
 # *Ejercicio 1:*
+# find <ruta_de_búsqueda> -name <patrón_nombre>
+> find /home/ubuntu -name "texto*" # busca en home todos los ficheros que empiezan por "texto" HAY QUE PONER EL *
+> find -name "texto*" # busca donde estás
+
 # *Ejercicio 2:*
+> find /home/ubuntu -type d # busca todos los directorios en $HOME
+# type: c = ficheros ; d = directorios
+
 # *Ejercicio 3:*
+> find / -type d -size +10M # directorios de más de 10M en el sistema
 
 # ----- REDIRECCIONES, TUBERÍAS Y EXPRESIONES REGULARES
 # *Ejercicio 1:*
+> s -l text* nada* > salida # mete lo que empieza por text a salida
+> ls -l text* nada* > salida.out 2> salida.error 
+# ls -l => saca la lista de info
+# 2> => para que sea la salida estándar de error
+# redirigir la salida estándar a salida.out (>) y la salida estándar de error a salida.error (2>)
+
 # *Ejercicio 2:*
+# > trunca el contenido del fichero
+# >> añade contenido ya existente
+> ls -l text* nada* >> salida.out 2>> salida.error 
+
 # *Ejercicio 3:*
+> ls -l text* nada* > salida.out 2>&1
+# 2>&1 => lo que antes iba a la salida de error ahora lo saca por la 1, es decir, la salida estandar
+# de tipo 1 -> salida estandar, de tipo 2 -> error
+# 2> saca la dos a salida.error
+
 # *Ejercicio 4:*
+> ls -l text* nada* > /dev/null 2>&1 # redirige la salida a /dev/null
+
 # *Ejercicio 5:*
+# redirige la entrada estandar ej:
+> cat texto1 | sort
+> sort < texto1
+# hacen lo mismo (aunque el segundo es más eficiente porque no tienes que llamar a ningun comando)
+
 # *Ejercicio 6:*
+> grep 'ja' texto1
+> grep 'ja$' texto1
+> grep 'a.a' texto1
+> grep 'al\{1,2}\o' texto1
 
 # ----- PROGRAMACIÓN EN LENGUAJE SHELL
 # *Ejercicio 1:*
